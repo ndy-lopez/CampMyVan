@@ -1,11 +1,10 @@
 class VansController < ApplicationController
 
   def index
-
+    @vans = Van.all
   end
 
   def show
-
   end
 
   # ------------------
@@ -32,4 +31,9 @@ class VansController < ApplicationController
 
   end
 
+  private
+
+  def set_van
+    @van = Van.find(params[:id])
+  end
 end
