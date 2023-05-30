@@ -2,6 +2,10 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: :destroy
   before_action :set_van, only: [:new, :create]
 
+  def index
+    @reservations = Reservation.all
+  end
+
   def new
     @reservation = Reservation.new
   end
