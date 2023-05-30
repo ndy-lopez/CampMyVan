@@ -1,0 +1,10 @@
+
+
+<h1> <%= @van.brand %></h1>
+<h3> <%= @van.model %></h3>
+<p> <%= @van.price %> $ / week</p>
+
+<%= link_to  "Book now", new_van_reservation_path(@van), class: "btn btn-flat" %>
+<%= link_to  "Home Page", root_path, class: "btn btn-gradient" %>
+
+<%# input images in there as well %>
