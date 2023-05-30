@@ -1,0 +1,18 @@
+<h1> Find your Van. Live your dream </h1>
+
+
+<% @vans.each do |van| %>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @vans.model %></h2>
+        <p><%= @vans.brand %></p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+<% end %>
