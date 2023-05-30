@@ -17,6 +17,11 @@ class VansController < ApplicationController
   def create
     @van = Van.new(vans_params)
 
+    if @van.save
+      redirect_to vans_path, notice: "saved!"
+    else
+      render :new, status: 422
+    end
   end
 
   # ------------------
