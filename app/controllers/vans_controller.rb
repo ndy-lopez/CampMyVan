@@ -16,10 +16,11 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(vans_params)
-
+    @van.user_id = current_user.id
     if @van.save
       redirect_to vans_path, notice: "saved!"
     else
+
       render :new, status: :unprocessable_entity
     end
   end
