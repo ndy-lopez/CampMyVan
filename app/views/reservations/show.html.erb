@@ -1,0 +1,11 @@
+<h1>Send a Message for <%= @van.brand %> <%= @van.model %></h1>
+
+
+
+  <form action="send_message.php" method="post">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+
+    <input type="submit" value="Send Message">
+  </form>
