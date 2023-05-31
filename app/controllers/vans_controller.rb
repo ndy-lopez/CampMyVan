@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  before_action :set_van, only: [:show, :create]
+  before_action :set_van, only: [:show, :edit, :update, :destroy]
   def index
     @vans = Van.all
     # The `geocoded` scope filters only flats with coordinates
@@ -27,7 +27,7 @@ class VansController < ApplicationController
     if @van.save
       redirect_to vans_path, notice: "saved!"
     else
-      render :new, status: 422
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,11 +38,16 @@ class VansController < ApplicationController
   end
 
   def update
-
+    if @van.update(vans_params)
+      redirect_to @van
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-
+    @van.destroy
+    redirect_to vans_path, notice: "Van listing was successfully removed"
   end
 
   private

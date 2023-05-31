@@ -1,10 +1,12 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: :destroy
-  before_action :set_van, only: [:new, :create]
+  before_action :set_reservation, only: [:destroy]
+  before_action :set_van, only: [:new, :show, :create]
 
   def index
     @reservations = Reservation.all
   end
+
+  def show; end
 
   def new
     @reservation = Reservation.new
@@ -12,11 +14,12 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.van = @van
+    @reservation.van_id = params[:van_id]
+    @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to van_path(@van)
+      redirect_to van_reservations_path(@reservation)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -6,5 +6,9 @@
 
 <%= link_to  "Book now", new_van_reservation_path(@van), class: "btn btn-flat" %>
 <%= link_to  "Home Page", root_path, class: "btn btn-gradient" %>
+<%= link_to  "Edit Listing", edit_van_path, class: "btn btn-gradient" %>
+<%= button_to  "Delete Listing", @van, class: "btn btn-gradient", method: :delete %>
+
+
 
 <%# input images in there as well %>
