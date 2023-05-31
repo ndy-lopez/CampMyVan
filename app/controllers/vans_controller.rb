@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  before_action :set_van, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_van, only: [:show, :edit, :update, :destroy]
   def index
     @vans = Van.all
   end
@@ -20,7 +20,7 @@ class VansController < ApplicationController
     if @van.save
       redirect_to vans_path, notice: "saved!"
     else
-      render :new, status: 422
+      render :new, status: :unprocessable_entity
     end
   end
 
