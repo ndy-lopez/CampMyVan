@@ -6,6 +6,11 @@
 
   <div class="card-trip">
     <img src="http://carsot.com/images/volkswagen-california-t6-2015-now-minivan-exterior-2.jpg" />
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
     <div class="card-trip-infos">
       <div>
         <h2><%= van.model %></h2>
