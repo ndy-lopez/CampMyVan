@@ -5,11 +5,12 @@
 <% @vans.each do |van| %>
 
   <div class="card-trip col-6">
-    <img src="http://carsot.com/images/volkswagen-california-t6-2015-now-minivan-exterior-2.jpg" class='w-100' />
+    <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+
     <div class="card-trip-infos">
-      <div>
         <h2><%= van.model %></h2>
         <p><%= van.brand %></p>
+      </div>
       </div>
       <h2 class="card-trip-pricing">$<%= van.price  / 52 %></h2>
       <%= link_to  "View Van", van_path(van.id), class: "btn btn-flat" %>
