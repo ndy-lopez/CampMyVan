@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  before_action :set_van, only: [:show, :create]
+  before_action :set_van, only: [:show, :create, :edit, :update, :destroy]
   def index
     @vans = Van.all
   end
@@ -31,11 +31,16 @@ class VansController < ApplicationController
   end
 
   def update
-
+    if @van.update(vans_params)
+      redirect_to @van
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-
+    @van.destroy
+    redirect_to vans_path, notice: "Van listing was successfully removed"
   end
 
   private
