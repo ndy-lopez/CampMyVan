@@ -1,6 +1,7 @@
 class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  
   def index
     @vans = Van.all
       # The `geocoded` scope filrs only flats with coordinates
@@ -27,11 +28,12 @@ end
     @van = Van.new(vans_params)
     @van.user_id = current_user.id
     if @van.save
-      redirect_to vans_path, notice: "saved!"
+      redirect_to van_path(@van), notice: "saved!"
     else
 
       render :new, status: :unprocessable_entity
     end
+
   end
 
   # ------------------
