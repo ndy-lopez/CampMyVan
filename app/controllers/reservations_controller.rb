@@ -3,8 +3,8 @@ class ReservationsController < ApplicationController
   before_action :set_van, only: [:new, :show, :create]
 
   def index
-    @reservations = Reservation.where(user: current_user)
-    @van = Van.find(params[:brand])
+    @client_reservations = Reservation.where(user: current_user)
+    # @van = Van.find(params[:brand])
   end
 
   def show; end

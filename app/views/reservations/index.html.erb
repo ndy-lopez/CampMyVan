@@ -4,12 +4,13 @@
   <div class="row">
     <p> Reservation dates </p>
 
-      <% @reservations.each do |reservation| %>
+      <% @client_reservations.each do |reservation| %>
+            <h2><%= reservation.van.brand %></h2>
 
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
           <div class="card-product-infos">
-            <h2><%= @van.brand %></h2>
+            <h2><%= reservation.van.brand %></h2>
 
             <p> <%= reservation.start_date %> </p>
             <p><%= reservation.start_date %> <strong>Until</strong> <%= reservation.end_date %></p>
