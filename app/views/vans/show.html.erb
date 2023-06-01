@@ -1,16 +1,23 @@
 
-
 <h1> <%= @van.brand %></h1>
 <h3> <%= @van.model %></h3>
-<h3> <%= @van.address %>
+<h3> <%= @van.address %> </h3>
 <p> <%= @van.price %> $ / week</p>
 
+<div class="show-van"><%= cl_image_tag @van.photo.key %></div>
+
+
 <% if user_signed_in? && @van.user == current_user  %>
-  <%= link_to  "Edit Listing", edit_van_path, class: "btn btn-gradient" %>
-  <%= button_to  "Delete Listing", @van, class: "btn btn-gradient", method: :delete %>
+<div class="col text-center">
+  <%= link_to  "Edit Listing", edit_van_path, class: "btn btn-warning" %>
+  <%= button_to  "Delete Listing", @van, class: "btn btn-warning", method: :delete %>
 <% end %>
-<%= link_to  "Book now", new_van_reservation_path(@van), class: "btn btn-flat" %>
-<%= link_to  "Home Page", root_path, class: "btn btn-gradient" %>
+</div>
+
+<div class="col text-center">
+  <%= link_to  "Book now", new_van_reservation_path(@van), class: "btn btn-warning"%>
+  <%= link_to  "Home Page", root_path, class: "btn btn-warning" %>
+</div>
 
 
 
