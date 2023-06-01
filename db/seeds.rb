@@ -18,14 +18,14 @@ if van
 end
 
 file = File.open(Rails.root.join('app', 'assets', 'images', 'MarcoPolo.jpg'))
-van = Van.find_by(id: van2.id) # Replace with the correct van ID
+van = Van.find_by(id: van2.id)
 if van
   van.photo.attach(io: file, filename: "MarcoPolo.jpg", content_type: "image/jpg")
   van.save
 end
 
 file = File.open(Rails.root.join('app', 'assets', 'images', 'NVCamper.jpg'))
-van = Van.find_by(id: van3.id) # Replace with the correct van ID
+van = Van.find_by(id: van3.id)
 if van
   van.photo.attach(io: file, filename: "NVCamper.jpg", content_type: "image/jpg")
   van.save
