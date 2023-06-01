@@ -6,11 +6,55 @@
     <% @vans.each do |van| %>
       <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
         <div class="card-product-infos">
-          <p><%= van.brand %></p>
-          <h2><%= van.model %></h2>
+          <h2><%= van.brand %></h2>
+          <p><%= van.model %></p>
           <p><%= van.address %></p>
-          <p><%= van.price %></p>
-          <%= link_to "View Van", van_path(van.id), class: "btn btn-flat" %>
+          <p><%= van.price %>$</p>
+          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+        </div>
+      </div>
+    <% end %>
+    <% @vans.each do |van| %>
+      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+        <div class="card-product-infos">
+          <h2><%= van.brand %></h2>
+          <p><%= van.model %></p>
+          <p><%= van.address %></p>
+          <p><%= van.price %>$</p>
+          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+        </div>
+      </div>
+    <% end %>
+    <% @vans.each do |van| %>
+      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+        <div class="card-product-infos">
+          <h2><%= van.brand %></h2>
+          <p><%= van.model %></p>
+          <p><%= van.address %></p>
+          <p><%= van.price %>$</p>
+          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+        </div>
+      </div>
+    <% end %>
+    <% @vans.each do |van| %>
+      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+        <div class="card-product-infos">
+          <h2><%= van.brand %></h2>
+          <p><%= van.model %></p>
+          <p><%= van.address %></p>
+          <p><%= van.price %>$</p>
+          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+        </div>
+      </div>
+    <% end %>
+    <% @vans.each do |van| %>
+      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+        <div class="card-product-infos">
+          <h2><%= van.brand %></h2>
+          <p><%= van.model %></p>
+          <p><%= van.address %></p>
+          <p><%= van.price %>$</p>
+          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
         </div>
       </div>
     <% end %>

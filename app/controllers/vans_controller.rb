@@ -4,14 +4,14 @@ class VansController < ApplicationController
 
   def index
     @vans = Van.all
-      # The `geocoded` scope filters only flats with coordinates
+      # The `geocoded` scope filrs only flats with coordinates
     @markers = @vans.geocoded.map do |van|
-      {
-        lat: van.latitude,
-        lng: van.longitude
-      }
-    end
+    {
+      lat: van.latitude,
+      lng: van.longitude
+    }
   end
+end
 
   def show
 
@@ -63,5 +63,4 @@ class VansController < ApplicationController
   def vans_params
     params.require(:van).permit(:model, :brand, :price, :photo)
   end
-
 end
