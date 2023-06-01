@@ -2,18 +2,23 @@
 
 <div class="container py-5">
   <div class="row">
-         <p> Reservation dates </p>
-    <% @reservations.each do |reservation| %>
-      <div class="d-inline">
-          <ul>
-            <li>
-            <%= link_to "#{reservation.start_date} to #{reservation.end_date}", van_reservation_path(van_id: reservation.van_id, id: reservation.id) %>
+    <p> Reservation dates </p>
 
-            </li>
-          </ul>
-                      <% end %>
-      </div>
+      <% @reservations.each do |reservation| %>
 
-<%= image_tag("https://dustycars.com/wp-content/uploads/2015/11/001-007-DSC_0295.jpg", height: 300) %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= @van.brand %></h2>
+
+            <p> <%= reservation.start_date %> </p>
+            <p><%= reservation.start_date %> <strong>Until</strong> <%= reservation.end_date %></p>
+          </div>
+        </div>
+          <%# <%= link_to "#{reservation.start_date} to #{reservation.end_date}", van_reservation_path(van_id: reservation.van_id, id: reservation.id) %> %>
+        <%# <p>You dont have any bookings</p> %>
+      <% end %>
   </div>
+
+  <%= image_tag("https://dustycars.com/wp-content/uploads/2015/11/001-007-DSC_0295.jpg", height: 300) %>
 </div>

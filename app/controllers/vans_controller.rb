@@ -6,12 +6,12 @@ class VansController < ApplicationController
     @vans = Van.all
       # The `geocoded` scope filrs only flats with coordinates
     @markers = @vans.geocoded.map do |van|
-    {
-      lat: van.latitude,
-      lng: van.longitude
+      {
+        lat: van.latitude,
+        lng: van.longitude
     }
+    end
   end
-end
 
   def show
 
