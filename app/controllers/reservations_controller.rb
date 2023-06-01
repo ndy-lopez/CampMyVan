@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.van_id = params[:van_id]
     @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to van_reservations_path(@reservation)
+      redirect_to reservations_path
     else
       render :new, status: :unprocessable_entity
     end
