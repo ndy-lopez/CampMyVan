@@ -1,7 +1,7 @@
 class Van < ApplicationRecord
-  has_one_attached :photo
-
   belongs_to :user
+  has_many :reservations
+  has_one_attached :photo
 
   validates :brand, presence: true
   validates :model, presence: true

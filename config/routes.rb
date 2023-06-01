@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :reservations, except: [:destroy, :index]
   end
   resources :reservations, only: [:destroy, :index]
+
+  get '/my_owner_reservations', to: 'reservations#my_owner_reservations'
 end

@@ -7,6 +7,10 @@ class ReservationsController < ApplicationController
     # @van = Van.find(params[:brand])
   end
 
+  def my_owner_reservations
+    @owner_reservations = current_user.owner_reservations
+  end
+
   def show; end
 
   def new
@@ -18,7 +22,7 @@ class ReservationsController < ApplicationController
     @reservation.van_id = params[:van_id]
     @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to van_reservations_path(@reservation)
+      redirect_to reservations_path
     else
       render :new, status: :unprocessable_entity
     end
