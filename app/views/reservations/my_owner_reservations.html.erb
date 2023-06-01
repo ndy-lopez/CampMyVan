@@ -1,4 +1,14 @@
 <h1>My Owner Reservations</h1>
 
 
-<%= @owner_reservations.size %>
+<% @owner_reservations.each do |reservation| %>
+
+<div class="card-res">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-res-product-infos">
+    <h2><%= reservation.user.first_name %>: wants to rent your van</h2>
+    <p>From: <%= reservation.start_date %> <strong> until </strong> <%= reservation.end_date %></p>
+  </div>
+</div>
+
+<% end %>
