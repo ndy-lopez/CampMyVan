@@ -5,7 +5,7 @@
 <%# <h3> <%= @van.address %>
 <p> <%= @van.price %> $ / week</p>
 
-<% if @van.user_id == current_user.id  %>
+<% if user_signed_in? && @van.user == current_user  %>
   <%= link_to  "Edit Listing", edit_van_path, class: "btn btn-gradient" %>
   <%= button_to  "Delete Listing", @van, class: "btn btn-gradient", method: :delete %>
 <% end %>
