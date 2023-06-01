@@ -8,6 +8,20 @@
       <%= form.text_field :query, value: params[:query], class: "form-control", placeholder: "Type a keyword" %>
       <%= form.submit "Search", class: "btn btn-primary" %>
     <% end %>
+<% @vans.each do |van| %>
+
+  <div class="card-trip col-6">
+    <img src="http://carsot.com/images/volkswagen-california-t6-2015-now-minivan-exterior-2.jpg" class='w-100' />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= van.model %></h2>
+        <p><%= van.brand %></p>
+      </div>
+      <h2 class="card-trip-pricing">$<%= van.price %></h2>
+      <%= link_to  "View Van", van_path(van.id), class: "btn btn-flat" %>
+
+      <%# <img src="https://kitt.lewagon.com/placeholder/users/mmessager" class="card-trip-user avatar-bordered" /> %>
+    </div>
   </div>
 </div>
 
