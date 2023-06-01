@@ -1,18 +1,16 @@
 class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
-  
+
   def index
     @vans = Van.all
       # The `geocoded` scope filters only flats with coordinates
     @markers = @vans.geocoded.map do |van|
-    {
-      lat: van.latitude,
-      lng: van.longitude
-    }
-  end
-end
-
+      {
+        lat: van.latitude,
+        lng: van.longitude
+      }
+    end
   end
 
   def show
@@ -65,3 +63,5 @@ end
   def vans_params
     params.require(:van).permit(:model, :brand, :price, :photo)
   end
+
+end
