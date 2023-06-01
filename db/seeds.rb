@@ -1,3 +1,4 @@
+Reservation.destroy_all
 Van.destroy_all
 User.destroy_all
 
