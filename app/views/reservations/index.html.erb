@@ -1,25 +1,21 @@
-<h3>List of reservations</h3>
+<h3>Your Van Bookings </h3>
 
 <div class="container py-5">
   <div class="row">
-    <p> Reservation dates </p>
 
       <% @client_reservations.each do |reservation| %>
+        <h2><%= reservation.van.user.first_name %></h2>
+        <div class="card-res">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-res-product-infos">
             <h2><%= reservation.van.brand %></h2>
 
-        <div class="card-product">
-          <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-          <div class="card-product-infos">
-            <h2><%= reservation.van.brand %></h2>
-
-            <p> <%= reservation.start_date %> </p>
             <p><%= reservation.start_date %> <strong>Until</strong> <%= reservation.end_date %></p>
           </div>
         </div>
-          <%# <%= link_to "#{reservation.start_date} to #{reservation.end_date}", van_reservation_path(van_id: reservation.van_id, id: reservation.id) %> %>
+          <%# <%= link_to "#{reservation.start_date} to #{reservation.end_date}", van_reservation_path(van_id: reservation.van_id, id: reservation.id) %>
         <%# <p>You dont have any bookings</p> %>
       <% end %>
   </div>
 
-  <%= image_tag("https://dustycars.com/wp-content/uploads/2015/11/001-007-DSC_0295.jpg", height: 300) %>
 </div>
