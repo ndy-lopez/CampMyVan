@@ -1,5 +1,11 @@
 
+<h1> <%= @van.brand %></h1>
+<h3> <%= @van.model %></h3>
+<h3> <%= @van.address %> </h3>
+<p> <%= @van.price %> $ / week</p>
+
 <div class="show-van"><%= cl_image_tag @van.photo.key %></div>
+
 
 <% if user_signed_in? && @van.user == current_user  %>
 <div class="col text-center">
