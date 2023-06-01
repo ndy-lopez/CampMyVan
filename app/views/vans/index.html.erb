@@ -1,22 +1,23 @@
 <h1 class="text-center"> Find a van. Live your dream. </h1>
-<p class="text-center">Prices are shown on weekly basis.</p>
 
 
-<% @vans.each do |van| %>
-
-  <div class="card-trip col-6">
-    <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
-
-    <div class="card-trip-infos">
-        <h2><%= van.model %></h2>
-        <p><%= van.brand %></p>
+<div class="vans-container">
+  <div class="vans-card">
+    <% @vans.each do |van| %>
+      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+        <div class="card-product-infos">
+          <h2><%= van.model %></h2>
+          <p><%= van.brand %></p>
+          <p><%= van.address %></p>
+          <p><%= van.price %></p>
+          <%= link_to "View Van", van_path(van.id), class: "btn btn-flat" %>
+        </div>
       </div>
-      </div>
-      <h2 class="card-trip-pricing">$<%= van.price %></h2>
-      <%= link_to  "View Van", van_path(van.id), class: "btn btn-flat" %>
+    <% end %>
 
-      <%# <img src="https://kitt.lewagon.com/placeholder/users/mmessager" class="card-trip-user avatar-bordered" /> %>
-    </div>
   </div>
-
-<% end %>
+  <div class="map-container" style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
