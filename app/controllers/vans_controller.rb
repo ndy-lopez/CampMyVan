@@ -4,7 +4,13 @@ class VansController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    if params[:query].present?
+      @vans = Van.search_by_van(params[:query])
+    else
+      @vans = Van.all
+    end
   end
+
 
   def show
   end
