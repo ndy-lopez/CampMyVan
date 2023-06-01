@@ -1,67 +1,80 @@
 <h1 class="text-center"> Find a van. Live your dream. </h1>
 
+<div class="container">
 
-<div class="vans-container">
-  <div class="vans-card">
-    <% @vans.each do |van| %>
-      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
-        <div class="card-product-infos">
-          <h2><%= van.brand %></h2>
-          <p><%= van.model %></p>
-          <p><%= van.address %></p>
-          <p><%= van.price %>$</p>
-          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
-        </div>
-      </div>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with(url: vans_path, method: :get, class: "d-flex") do |form| %>
+      <%= form.text_field :query, value: params[:query], class: "form-control", placeholder: "Type a keyword" %>
+      <%= form.submit "Search", class: "btn btn-primary" %>
     <% end %>
-    <% @vans.each do |van| %>
-      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
-        <div class="card-product-infos">
-          <h2><%= van.brand %></h2>
-          <p><%= van.model %></p>
-          <p><%= van.address %></p>
-          <p><%= van.price %>$</p>
-          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
-        </div>
-      </div>
-    <% end %>
-    <% @vans.each do |van| %>
-      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
-        <div class="card-product-infos">
-          <h2><%= van.brand %></h2>
-          <p><%= van.model %></p>
-          <p><%= van.address %></p>
-          <p><%= van.price %>$</p>
-          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
-        </div>
-      </div>
-    <% end %>
-    <% @vans.each do |van| %>
-      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
-        <div class="card-product-infos">
-          <h2><%= van.brand %></h2>
-          <p><%= van.model %></p>
-          <p><%= van.address %></p>
-          <p><%= van.price %>$</p>
-          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
-        </div>
-      </div>
-    <% end %>
-    <% @vans.each do |van| %>
-      <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
-        <div class="card-product-infos">
-          <h2><%= van.brand %></h2>
-          <p><%= van.model %></p>
-          <p><%= van.address %></p>
-          <p><%= van.price %>$</p>
-          <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
-        </div>
-      </div>
-    <% end %>
-
   </div>
-  <div class="map-container" style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
+
+
+
+  <div class="vans-container">
+    <div class="vans-card">
+      <% @vans.each do |van| %>
+        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+          <div class="card-product-infos">
+            <h2><%= van.brand %></h2>
+            <p><%= van.model %></p>
+            <p><%= van.address %></p>
+            <p><%= van.price %>$</p>
+            <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+          </div>
+        </div>
+      <% end %>
+      <% @vans.each do |van| %>
+        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+          <div class="card-product-infos">
+            <h2><%= van.brand %></h2>
+            <p><%= van.model %></p>
+            <p><%= van.address %></p>
+            <p><%= van.price %>$</p>
+            <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+          </div>
+        </div>
+      <% end %>
+      <% @vans.each do |van| %>
+        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+          <div class="card-product-infos">
+            <h2><%= van.brand %></h2>
+            <p><%= van.model %></p>
+            <p><%= van.address %></p>
+            <p><%= van.price %>$</p>
+            <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+          </div>
+        </div>
+      <% end %>
+      <% @vans.each do |van| %>
+        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+          <div class="card-product-infos">
+            <h2><%= van.brand %></h2>
+            <p><%= van.model %></p>
+            <p><%= van.address %></p>
+            <p><%= van.price %>$</p>
+            <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+          </div>
+        </div>
+      <% end %>
+      <% @vans.each do |van| %>
+        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path van.photo.key %>')">
+          <div class="card-product-infos">
+            <h2><%= van.brand %></h2>
+            <p><%= van.model %></p>
+            <p><%= van.address %></p>
+            <p><%= van.price %>$</p>
+            <%= link_to "View Van", van_path(van.id), class: "btn btn-warning" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="map-container" style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
