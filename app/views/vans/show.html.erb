@@ -2,7 +2,7 @@
 
 <h1> <%= @van.brand %></h1>
 <h3> <%= @van.model %></h3>
-<%# <h3> <%= @van.address %>
+<h3> <%= @van.address %> </h3>
 <p> <%= @van.price %> $ / week</p>
 
 <% if user_signed_in? && @van.user == current_user  %>
