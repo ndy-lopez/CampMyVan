@@ -59,7 +59,7 @@ class VansController < ApplicationController
   end
 
   def vans_params
-    params.require(:van).permit(:model, :brand, :price, :photo)
+    params.require(:van).permit(:model, :brand, :price, :photo, :address)
   end
 
   def set_markers
