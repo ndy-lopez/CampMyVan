@@ -32,3 +32,6 @@ if van
   van.photo.attach(io: file, filename: "NVCamper.jpg", content_type: "image/jpg")
   van.save
 end
+
+res = Reservation.new(start_date: Date.today, end_date: Date.today, van: van1, user: user1 )
+res.save

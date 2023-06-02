@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :vans do
     resources :reservations, except: [:destroy, :index]
   end
-  resources :reservations, only: [:destroy, :index]
+  resources :reservations, only: [:destroy, :index, :update, :show]
 
   get '/my_owner_reservations', to: 'reservations#my_owner_reservations'
 end

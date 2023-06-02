@@ -1,13 +1,14 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:destroy]
-  before_action :set_van, only: [:new, :show, :create]
+  before_action :set_reservation, only: [:destroy, :show]
+  before_action :set_van, only: [:new, :create]
 
   def index
     @client_reservations = Reservation.where(user: current_user)
     # @van = Van.find(params[:brand])
   end
 
-  def show; end
+  def show;
+  end
 
   def new
     @reservation = Reservation.new
@@ -27,6 +28,16 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation.destroy
     redirect_to van_path(@reservation.van), status: :see_other
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.accept = params[:accept].to_i.zero? ? false : true
+    if @reservation.save
+      redirect_to my_owner_reservations_path
+    else
+      render :my_owner_reservations_path
+    end
   end
 
   private
