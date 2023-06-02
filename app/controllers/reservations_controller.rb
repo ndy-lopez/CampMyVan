@@ -7,10 +7,6 @@ class ReservationsController < ApplicationController
     # @van = Van.find(params[:brand])
   end
 
-  def my_owner_reservations
-    @owner_reservations = current_user.owner_reservations
-  end
-
   def show; end
 
   def new

@@ -8,6 +8,8 @@
   <div class="card-res-product-infos">
     <h2><%= reservation.user.first_name %>: wants to rent your van</h2>
     <p>From: <%= reservation.start_date %> <strong> until </strong> <%= reservation.end_date %></p>
+    <%= link_to "Accept", "#", class: "btn btn-card-gradient" %>
+    <%= link_to "Decline", "#", class: "btn btn-card-gradient" %>
   </div>
 </div>
 
