@@ -6,6 +6,22 @@
   -webkit-text-fill-color: transparent;
 }
 
+.vans-container {
+  display: flex;
+}
+
+.map-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 600px;
+}
+
+.vans-card {
+  width:40%;
+}
+
+
 .show-container {
   display: flex;
   flex-direction: column; /* Align children vertically */
@@ -57,4 +73,124 @@
 
 .btn-show {
   margin-top: 20px; /* Add spacing between buttons */
+}
+
+uct img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.show-van img {
+  display: block;
+  margin: 0 auto;
+  height: 20%;
+  width: 60%;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+
+.title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 50px;
+  background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vans-container {
+  display: flex;
+}
+
+.map-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 600px;
+}
+.vans-card {
+  width:40%;
+}
+
+.card-product {
+  color: white;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-product img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.show-van img {
+  display: block;
+  margin: 0 auto;
+  height: 20%;
+  width: 60%;
+  object-fit: cover;
+  border-radius: 5%;
 }
