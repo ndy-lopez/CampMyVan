@@ -11,6 +11,14 @@
             <h2><%= reservation.van.brand %></h2>
 
             <p><%= reservation.start_date %> <strong>Until</strong> <%= reservation.end_date %></p>
+            <% if reservation.accept == true %>
+                <p>Status: Accepted!</p>
+              <% elsif reservation.accept == false %>
+                <p>Status: Cancelled!</p>
+              <% elsif reservation.accept.nil? %>
+                <p>Status: Under Review</p>
+              <% end %>
+
           </div>
         </div>
           <%# <%= link_to "#{reservation.start_date} to #{reservation.end_date}", van_reservation_path(van_id: reservation.van_id, id: reservation.id) %>

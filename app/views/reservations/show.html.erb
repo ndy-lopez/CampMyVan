@@ -1,11 +1,8 @@
-<h1>Send a Message for <%= @van.brand %> <%= @van.model %></h1>
+<%# Create a form with two inputs accept/decline
+send patch request to update accept
+each button will be assosciate to param true or false
+in controller we will update boolean %>
 
 
-
-  <form action="send_message.php" method="post">
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
-
-    <input type="submit" value="Send Message">
-  </form>
+  <%=  button_to 'Accept', method: 'patch', params:{accept:1} %>
+  <%=  button_to 'Reject', method: 'patch', params:{accept:0} %>

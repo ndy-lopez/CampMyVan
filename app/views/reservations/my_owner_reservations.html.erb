@@ -8,6 +8,15 @@
   <div class="card-res-product-infos">
     <h2><%= reservation.user.first_name %>: wants to rent your van</h2>
     <p>From: <%= reservation.start_date %> <strong> until </strong> <%= reservation.end_date %></p>
+    <% if reservation.accept == true %>
+      <p>Status: Accepted</p>
+    <% elsif reservation.accept == false%>
+      <p>Status: Rejected</p>
+    <% elsif reservation.accept.nil? %>
+      <%=  button_to 'Accept', reservation_path(reservation), method: 'patch', params:{accept:1}, class: "btn btn-card-gradient"%>
+      <%=  button_to 'Reject', reservation_path(reservation), method: 'patch', params:{accept:0}, class: "btn btn-card-gradient"%>
+    <% end %>
+
   </div>
 </div>
 
