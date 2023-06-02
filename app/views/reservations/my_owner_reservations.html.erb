@@ -1,22 +1,24 @@
+<div class="header">
 <h1>My Owner Reservations</h1>
-
+</div>
 
 <% @owner_reservations.each do |reservation| %>
 
 <div class="card-res">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <%= cl_image_tag reservation.van.photo.key %>
   <div class="card-res-product-infos">
     <h2><%= reservation.user.first_name %>: wants to rent your van</h2>
     <p>From: <%= reservation.start_date %> <strong> until </strong> <%= reservation.end_date %></p>
+   <div class="buttons">
     <% if reservation.accept == true %>
       <p>Status: Accepted</p>
     <% elsif reservation.accept == false%>
       <p>Status: Rejected</p>
     <% elsif reservation.accept.nil? %>
-      <%=  button_to 'Accept', reservation_path(reservation), method: 'patch', params:{accept:1}, class: "btn btn-card-gradient"%>
-      <%=  button_to 'Reject', reservation_path(reservation), method: 'patch', params:{accept:0}, class: "btn btn-card-gradient"%>
+      <%=  button_to 'Accept', reservation_path(reservation), method: 'patch', params:{accept:1}, class: "btn btn-success"%>
+      <%=  button_to 'Reject', reservation_path(reservation), method: 'patch', params:{accept:0}, class: "btn btn-danger"%>
     <% end %>
-
+</div>
   </div>
 </div>
 

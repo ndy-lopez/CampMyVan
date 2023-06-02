@@ -1,19 +1,23 @@
 .card-res {
   overflow: hidden;
-  height: 120px;
-  background: white;
+  height: 140px;
+  background: #f8a35e;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 25px;
 }
 
 .card-res img {
   height: 100%;
   width: 120px;
   object-fit: cover;
+  justify-content: start;
+
 }
 
 .card-res h2 {
+  color: darkblue;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -29,4 +33,33 @@
 
 .card-res .card-res-product-infos {
   padding: 16px;
+  margin: 10px;
+}
+
+.card-title {
+text-align: center;
+margin: 5px;
+background: none;
+border: 1px lightgray;
+border-radius: 8px;
+
+}
+
+.container {
+  margin:25px;
+  padding: 30px;
+}
+
+.buttons {
+
+  display: flex;
+  flex: start;
+ gap: 15px;
+ margin-top: 15px;
+}
+
+.header h1 {
+
+  text-align: center;
+  margin-top: 40px;
 }
