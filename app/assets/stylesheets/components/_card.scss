@@ -1,4 +1,3 @@
-
 .title {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 50px;
@@ -7,73 +6,51 @@
   -webkit-text-fill-color: transparent;
 }
 
-.vans-container {
+.show-container {
   display: flex;
+  flex-direction: column; /* Align children vertically */
+  align-items: center; /* Center the content horizontally */
+  text-align: center; /* Center the text content */
+  background-color: #643843;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.map-container {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 600px;
-}
-.vans-card {
-  width:40%;
-}
 
-.card-product {
-  color: white;
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.img-show {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  margin-bottom: 20px;
+}
+
+.card-category {
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-product img {
-  height: 100%;
-  width: 100%;
-  border-radius: 5%;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 20px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product-infos {
+  background-repeat: no-repeat;
+  height: 380px;
+  width: 500px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-right: 20px; /* Add spacing between card-category and card-info */
 }
 
+.card-info {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 20px; /* Add spacing between card-info and buttons */
+}
 
-.show-van img {
-  display: block;
-  margin: 0 auto;
-  height: 20%;
-  width: 60%;
-  object-fit: cover;
-  border-radius: 5%;
+.btn-show {
+  margin-top: 20px; /* Add spacing between buttons */
 }

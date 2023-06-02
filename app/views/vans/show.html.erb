@@ -1,24 +1,25 @@
+<div class="show-container">
+  <div class="img-show">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@van.photo.key) %>);"></div>
+    <div class="card-info">
+      <h1><%= @van.brand %></h1>
+      <h3><%= @van.model %></h3>
+      <h3><%= @van.address %></h3>
+      <p><%= @van.price %> $ / night</p>
+    </div>
+  </div>
 
-<h1> <%= @van.brand %></h1>
-<h3> <%= @van.model %></h3>
-<h3> <%= @van.address %> </h3>
-<p> <%= @van.price %> $ / week</p>
+  <% if user_signed_in? && @van.user == current_user  %>
+    <div class="btn-show col text-center">
+      <%= link_to  "Edit Listing", edit_van_path, class: "btn btn-warning" %>
+      <%= button_to  "Delete Listing", @van, class: "btn btn-warning", method: :delete %>
+    </div>
+  <% end %>
 
-<div class="show-van"><%= cl_image_tag @van.photo.key %></div>
+  <div class="btn-show col text-center">
+    <%= link_to  "Book now", new_van_reservation_path(@van), class: "btn btn-warning"%>
+    <%= link_to  "Home Page", root_path, class: "btn btn-warning" %>
+  </div>
 
-
-<% if user_signed_in? && @van.user == current_user  %>
-<div class="col text-center">
-  <%= link_to  "Edit Listing", edit_van_path, class: "btn btn-warning" %>
-  <%= button_to  "Delete Listing", @van, class: "btn btn-warning", method: :delete %>
-<% end %>
+  <%# input images in there as well %>
 </div>
-
-<div class="col text-center">
-  <%= link_to  "Book now", new_van_reservation_path(@van), class: "btn btn-warning"%>
-  <%= link_to  "Home Page", root_path, class: "btn btn-warning" %>
-</div>
-
-
-
-<%# input images in there as well %>
