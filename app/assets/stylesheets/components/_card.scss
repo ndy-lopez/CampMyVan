@@ -1,3 +1,12 @@
+
+.title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 50px;
+  background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .vans-container {
   display: flex;
 }

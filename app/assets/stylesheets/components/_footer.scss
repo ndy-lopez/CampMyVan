@@ -1,14 +1,19 @@
 .footer {
   background-color: #FBAB7E;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  color: darkblue;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: darkblue;
+
+  /* Updated CSS for sticky footer */
+
 }
+
+
 .footer-links {
   display: flex;
   align-items: center;
