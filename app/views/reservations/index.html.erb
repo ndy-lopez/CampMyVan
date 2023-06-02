@@ -1,12 +1,14 @@
-<h3>Your Van Bookings </h3>
+<div class="card-title">
+  <h1>Your Van Bookings </h1>
+</div>
 
 <div class="container py-5">
   <div class="row">
 
       <% @client_reservations.each do |reservation| %>
-        <h2><%= reservation.van.user.first_name %></h2>
+        <h2><%= reservation.van.user.first_name %>: wants to rent your Van</h2>
         <div class="card-res">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= cl_image_tag reservation.van.photo.key %>
           <div class="card-res-product-infos">
             <h2><%= reservation.van.brand %></h2>
 
